@@ -1,3 +1,27 @@
+var string = "any string"
+console.log(string);
+var num = 9;
+console.log(num);
+var boll = true;
+console.log(boll);
+var object;
+console.log(object);
+object = null;
+console.log(object)
+var arr1 = [1,2000000,67586,47668,0.786];
+console.log(arr1);
+console.log(arr1[1])
+var arr2 = ["chocolate",13,true,"text"]
+console.log(arr2);
+var arr3 = [["aditi",13],["atithi",14]];
+console.log(arr3[1][1]);
+arr3.push(["aaliya",12])
+console.log(arr3)
+arr3.pop();
+console.log(arr3);
+
+var gameState = "onsling"
+
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
@@ -69,11 +93,14 @@ function draw(){
 }
 
 function mouseDragged(){
+    if (gameState !== "launched"){
     Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    }
 }
 
 
 function mouseReleased(){
+    gameState = "launched"
     slingshot.fly();
 }
 
